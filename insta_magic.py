@@ -1,17 +1,26 @@
 from bs4 import BeautifulSoup
 import sys
 import urllib.request
+import urllib.error as err
 
 
 def web_crawler(file_type, link, filename):
 	if file_type == "image":
-		html_page = urllib.request.urlopen(link)
+		try:
+			html_page = urllib.request.urlopen(link)
+		except err.URLError:
+			print("The post is probably from a private account")
+			return
 		soup = BeautifulSoup(html_page, 'html.parser')
 		image = soup.find("meta",  property="og:image")["content"]
 		urllib.request.urlretrieve(str(image), filename)
 
 	if file_type == "video":
-		html_page = urllib.request.urlopen(link)
+		try:
+			html_page = urllib.request.urlopen(link)
+		except err.URLError:
+			print("The post is probably from a private account")
+			return
 		soup = BeautifulSoup(html_page, 'html.parser')
 		image = soup.find("meta",  property="og:video")["content"]
 		urllib.request.urlretrieve(str(image), filename)
