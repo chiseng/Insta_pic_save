@@ -1,5 +1,5 @@
 # Instagram Image Downloader
-Because sometimes social media really sucks but that picture is really nice. Saves picture to directory that you are running the script on.
+Because sometimes social media really sucks but that picture/vid is really nice. Saves file to directory that you are running the script on. Only works for accounts that are unprivated.
 
 ```
 Setup:
