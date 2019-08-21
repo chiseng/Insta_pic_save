@@ -9,5 +9,5 @@ pip3 install bs4
 
 Run:
 
-python3 save_insta_pic.py <type(image/video)> <link> <filename.jpg/filename.mp4>
+python3 insta_magic.py <type(image/video)> <link> <filename.jpg/filename.mp4>
 ```
